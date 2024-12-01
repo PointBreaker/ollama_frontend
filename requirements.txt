@@ -1,0 +1,5 @@
+# requirements.txt
+streamlit
+requests
+beautifulsoup4
+lxml

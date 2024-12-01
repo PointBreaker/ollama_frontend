@@ -1,0 +1,14 @@
+services:
+  chat-frontend:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./chat_history.db:/app/chat_history.db
+      - ./exports:/app/exports
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+      - OLLAMA_HOST=host.docker.internal  # Docker 特殊 DNS，指向宿主机
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # 为 Linux 添加主机映射
