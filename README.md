@@ -39,14 +39,8 @@ streamlit run app.py
 
 ### Docker 部署
 
-1. 使用 host 网络模式（推荐）：
 ```bash
-docker-compose -f docker-compose-host.yml up --build
-```
-
-2. 或使用桥接网络模式：
-```bash
-docker-compose -f docker-compose-bridge.yml up --build
+docker-compose -f docker-compose.yml up --build
 ```
 
 ## 配置文件
@@ -95,16 +89,18 @@ ollama-chat/
    - 本地开发：http://localhost:8501
    - Docker 部署：http://localhost:8501
 
-2. 在侧边栏选择模型：
+![image](https://raw.githubusercontent.com/PointBreaker/ollama_frontend/refs/heads/main/pic/image.png)
+
+1. 在侧边栏选择模型：
    - 支持所有已安装的 Ollama 模型
    - 可随时切换模型（会清空当前对话）
 
-3. 聊天功能：
+2. 聊天功能：
    - 在输入框中输入消息并发送
    - 支持代码和 SVG 渲染
    - 实时流式响应
 
-4. 历史记录：
+3. 历史记录：
    - 自动保存所有对话
    - 可浏览历史对话
    - 支持导出对话记录
